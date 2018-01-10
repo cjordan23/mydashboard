@@ -1,0 +1,13 @@
+.card {
+    padding: 10px;
+    width: auto;
+    height: auto;
+}
+.card-columns {
+    @include media-breakpoint-only(lg) {
+      column-count: 4;
+    }
+    @include media-breakpoint-only(xl) {
+      column-count: 5;
+    }
+  }
