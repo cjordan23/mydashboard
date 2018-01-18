@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
+use DB;
 
 class PostsController extends Controller
 {
@@ -14,8 +16,9 @@ class PostsController extends Controller
     public function index()
     {
         //
+        $posts = Post::orderBy('created_at','desc');
+        return view('workflows.index')->with('posts',$posts);
 
-        return view('workflows.index');
     }
 
     /**
@@ -26,7 +29,7 @@ class PostsController extends Controller
     public function create()
     {
         //
-        
+        return view('workflows.create');
     }
 
     /**
@@ -38,6 +41,16 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'title'=>'required',
+            'body'=>'required'
+        ]);
+        $posts = new Post;
+        $posts->title = $request->input('title');
+        $posts->body = $request->input('body');
+        $posts->save();
+
+        return redirect('/workflows', ['posts'=>$posts] );   
     }
 
     /**
@@ -49,6 +62,8 @@ class PostsController extends Controller
     public function show($id)
     {
         //
+        $posts = Post::all();
+        return view('workflows.show')->with('posts',$posts);
     }
 
     /**

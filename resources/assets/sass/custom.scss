@@ -1,193 +1,149 @@
-// Header and TopNavbar
 
+//Universal
+html, body {
+    width: 100%;
+}
+header, nav, section, aside, span {
+    display: block !important;
+}
+
+// Header and TopNavbar
+header {
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
+    line-height: 23px;
+    padding: 10px;
+    transition: all 0.5s ease 0s;
+    width: 100% !important;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#main-header{
+    height: 60px;
+    z-index: 1030;
+    top: 0;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    box-shadow: 0px 0px 5px 0px grey;
+}
+#main-header a {
+    background-color: white;
+}
 .navbarTop {
-      top: 0;
-      background-color: #b70000;
-      border-radius: 0;
-      box-shadow:0 0 10px rgba(0, 0, 0, 0.40);
-  }
-  #navTitle{
-      font-size: 26px;
-      color: azure;
-      float: left;
-      display: block;
-  }
-  #webNavbarTop{
-      font-size: 16px;
-      color: white;
-      width: 100%;
-  }
-  .navbartop-text{
-      
-      width: inherit;
-  }
-  
-  .toggleBtn{
-      height: 24px;
-  }
-  header {
-      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
-      display: inline-block !important;
-      line-height: 23px;
-      padding: 10px;
-      transition: all 0.5s ease 0s;
-      width: 100%;
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease;
-      -o-transition: all 0.5s ease;
-      transition: all 0.5s ease;
-  }
-  
-  .logo img {
-      max-width: 180px;
-      padding: 16px 0 17px;
-      width: 100%;
-  }
-  
-  .header-top {
-      margin: 0;
-      padding-top: 2px;
-  }
-  
-  .header-top img {
-      border-radius: 50%;
-      max-width: 48px !important;
-      width: 100%;
-  }
-  
-  
-  // LeftSideBar
-  #navigation {
-      padding-left: 0;
-      padding-right: 0;
-  
-  }
-  #navigation {
-      position: fixed;
-      top: 60px;
-      left: 0;
-      bottom: 0;
-      z-index: 1000;
-      height: 100vh;
-      background: #25365a;
-      border-radius: 0;
-      overflow-x: hidden;
-      overflow-y: auto;
-  
-  
-  }
-  #navigation span{
-      color: white;
-      text-align: left;
-      display: block;
-      padding: 20px;
-      width: 100%;
-  }
-  #navigation{
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease;
-      -o-transition: all 0.5s ease;
-      transition: all 0.5s ease;
-  }
-  .navi ul{
-      width: 100%;
-  }
-  .navi ul a{
-      font-size: 16px;
-  }
-  #navigation .navi i {
-      margin-right: 0px;
-  }
-  #navigation .navi a:hover,
-  #navigation .navi .active a {
-      background: #122143 none repeat scroll 0 0;
-      border-left: none;
-      display: block;
-     
-  }
-  .navi i {
-      font-size: 20px;
-  
-  }
-  
-  
-  //Content user-dashboard class
-  
-  #map-container{
-      height:400px;
-      width:100%;
-  }
-  #regis-map{
-      height:400px;
-      width:100%;
-  }
-  .main-content {
-      top: 10rem !important; 
-      left: auto;
-      right: auto;
-  }
-  .main-content .user-dashboard {
-      padding: 0 20px auto auto ;
-      display: block;
-  
-  }
-  
-  #adminMenuContainer a {
-      font-size: 16px;
-      padding: 5px;
-  }
-  #adminMenuContainer {
-      margin: 0;
-      padding: 1%;
-      margin-bottom: 1%;
-  }
-  
-  //Card
-  #card-body-form{
-      padding: 1%;
-  }
-  .card div{
-      height: 100% !important;
-      width: 100%!important;
-  }
-  div .card-header{
-      height: 100%;
-  }
-  canvas {
-      width:100% !important;
-      height:100% !important;
-  }
-  
-  // Table
-  .display-table {
-      display: table;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-  }
-  
-  .display-table-row {
-      display: table-row;
-      height: 100%;
-  }
-  
-  .display-table-cell {
-      display: table-cell;
-      float: none;
-      height: 100%;
-  }
-  
-  .v-align {
-      vertical-align: top;
-  }
-  
-  
+    margin-left: 230px;
+    background-color: #b70000;
+    border-radius: 0;
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.40);
+}
+#navTitle{
+    width: 200px;
+    transition: width .3s ease-in-out;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin:0;
+    font-size: 24px;    
+
+}
+
+
+//Main Content 
+#main-content {
+    margin: 20px 20px 20px 20px;
+    top: 80px !important; 
+    height: 100%;
+    position: relative;
+
+}
+
+#sidebar{
+    position: fixed;
+    float: left;
+    top:60px !important;
+    height: 100%;
+    width: 200px;
+    background-color:#800000;
+    box-shadow: 0 10px 0 0 grey;
+    z-index: 1020;
+}
+#sidebar div {
+    width: 100%;
+}
+#sidebar div a {
+    font-size: 18px;
+    display: block;
+    color: white;
+}
+#sidebar div:hover, #sidebar div a:hover{
+    border-bottom-color: white;
+    border-bottom-width: 5px;
+}
+
+// MAP and Chart
+#myChart,#chartLine,#pieChart,#statisticChart1,#statisticChart2,#world-map-container{
+    width: 100%;
+    height: 400px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+}
+
+#map-container-card{
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    padding: 20px;
+    
+}
+#map-container{
+    height:500px;
+    width:auto;
+}
+#regis-map{
+    height:400px;
+    width:100%;
+}
+
+#adminMenuContainer a {
+    font-size: 16px;
+    padding: 5px;
+}
+#adminMenuContainer {
+    margin: 0;
+    padding: 1%;
+    margin-bottom: 1%;
+}
+
+//Card
+#card-body-form{
+    padding: 1%;
+}
+.card div{
+    height: 100% !important;
+    width: 100%!important;
+}
+div .card-header{
+    height: 100%;
+}
+canvas {
+    width:100% !important;
+    height:100% !important;
+}
+
+ 
   
   /*
   Media Quesris
   */
   
-  
+  @media only screen and (min-device-width:500px) and (max-device-width:720px){
+      .wrapper, #content-container {
+          margin-top: 320px;
+      }
+  }
+
   @media only screen and (min-device-width:998px) and (max-device-width: 1350px){
       #navigation .logo img {
           max-width: 130px;
@@ -229,12 +185,12 @@
   *   Media Queries for LeftSideMenu
   */
   @media all and (min-width:960px){
-      .navi ul a{
+      .main-left-sidebar ul a{
           font-size: 18px;
       }
   }
   @media all and (max-width:959px) and (min-width:600px){
-      .navi ul a{
+      .main-left-sidebar ul a{
           font-size: 12px;
       }
   }

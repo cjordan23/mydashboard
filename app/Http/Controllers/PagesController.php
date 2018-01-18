@@ -28,10 +28,8 @@ class PagesController extends Controller
     public function dashboardPage(){
         return view('dashboard');
     }
-    public function workflowPage(){
-        return view('workflows.index');
+    public function statisticPage(){
+        return view('pages.statistic');
     }
-    public function createPost(){
-        return view('workflows.create');
-    }
+ 
 }

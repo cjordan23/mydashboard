@@ -30,77 +30,16 @@ let chartLine = new Chart (ctx, {
             data:[65,59,80,89,76,65,55],
         }]
     },
-    option:{}
+    option:{
+        responsive: true,
+        maintainAspectRatio: true,
+        responsiveAnimationDuration: 1        
+    }
 });
 
-var ctx = document.getElementById("statisticChart1");
-let statChart = new Chart (ctx,{
-    type:'bar',
-    data: {
-        labels:["Microsoft","Apple","Linux"],
-        datasets: [{
-            data:[60,25,15],
-            backgroundColor:'#6287DE',
-            borderColor:'#00FFFF',
-            borderWidth:2
-
-        }]
-    },
-    option:{}
+var ctx = document.getElementById("pieChart");
+let pieChart = new Chart (ctx,{
+    type: 'pie',
+    data: data,
+    options: options
 });
-
-
-var ctx = document.getElementById("statisticChart2");
-let statChart2 = new Chart(ctx, {
-    type:'line',
-    data: {
-        labels:["Microsoft","Apple","Linux"],
-        datasets: [{
-            data:[35,20,5],
-            lineColor: '#334466',
-            backgroundColor:'#eee9e9'
-        }]
-    },
-    option:{
-        scale:{
-            yAxes:[{
-                ticks:{
-                    beginAtZero:true 
-                }
-            }]
-        }
-    }
-})
-
-var ctx = document.getElementById("statisticChart3");
-let statChart3 = new Chart(ctx , {
-    type:'doughnut',
-    data: {
-        labels:["Microsoft","Apple","Linux"],
-        datasets: [{
-            data:[50,30,20] ,
-            backgroundColor:['#eee9e9','#B0B0B0','#E2E86D']
-        }]
-    },
-    option:{
-       
-    }
-
-})
-
-var ctx = document.getElementById("statisticChart4");
-let statChart4 = new Chart(ctx, {
-    type:'polarArea',
-    data: {
-        labels:["Microsoft","Apple","Linux","Android","iOS"],
-        datasets: [{
-            label:'Points', 
-            data:[35,20,5,25,15] ,
-            backgroundColor:["#6987FF","#E1E2E6","#E3D734","#14E36E","#14C7E3"]
-        }]
-    },
-    option:{
-        
-        
-    }
-})
