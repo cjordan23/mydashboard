@@ -15,20 +15,20 @@
       <div class="page-header">
         <h1 id="timeline"> {{ Auth::user()->name }} ! This is your timeline </h1>
       </div>
-      @if( count($workflow) > 0 )
-        @foreach( $workflow as $workflows )
+      @if( count($posts) > 0 )
+        @foreach($posts as $post)
           <ul class="timeline">
               <li>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4 class="timeline-title">{{$workflows->titleWorkflows}}</h4>
+                    <h4 class="timeline-title"><a href="/workflows/{{$post->id}}">{{$post->title}}</a></h4>
                   </div>
                   <div class="timeline-body">
-                    <p>{{$workflows->bodyWorkflows}}</p>
+                    <p>{{$post->body}}</p>
                     <p>
                         <small class="text-muted">
-                          <i class="glyphicon glyphicon-time">
-                          </i>Posted on {{$workflows->created_at}}
+                          <i class="glyphicon glyphicon-time"></i>
+                          Posted on {{$post->created_at}}
                         </small>
                     </p>
                   </div>
@@ -43,11 +43,11 @@
     </div>
   </div>
 </div>
-<!--
+
 <div class="container-fluid">
   <div class="row no-gutters">
-    {{--  Workflow timeline view  --}}
-    <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+    <!--  Workflow timeline view  -->
+    <div class="col-md-10 col-md-offset-2 col-sm-12 col-xs-12">
       @include('includes.workflowBtn')
       <div class="page-header">
         <h1 id="timeline">Timeline</h1>

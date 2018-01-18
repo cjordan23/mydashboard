@@ -18,8 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/statistic', 'PagesController@statisticPage');
 
 Route::get('/dashboard', 'PagesController@dashboardPage');
 Route::get('/admin', 'PagesController@adminPage');
-Route::get('/workflows','PagesController@workflowPage');
-Route::get('/workflows/create', 'PagesController@createPost');
+
+Route::resource('workflows','PostsController');
+// Route::get('/workflows/show','PostsController@show');
+// Route::post('/workflows/create', 'PostsController@store');  
+

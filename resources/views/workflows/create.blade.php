@@ -10,18 +10,20 @@
                         <div class="alert alert-secondary" role="alert">
                               <h3>Create Your Post</h3>
                         </div>
+                        {!! Form::open([ 'action'=>'PostsController@store', 'method'=>'POST' ]) !!}
                         <form>
                               <div class="form-group">
-                                    {!! Form::open([ 'action'=>'PostsController@store', 'method'=>'POST' ]) !!}
-                                          {{ Form::label('titleWorkflows', 'Tittle : ') }}
-                                          {{ Form::text('titleWorkflows','',['class'=>'form-control','placeholder'=>'Title']) }}
-                                          {{ Form::label('bodyWorkflows', 'Description : ') }}
-                                          {{ Form::textarea('bodyWorkflows', '', ['class'=>'form-control','placeholder'=>'Description'] ) }}
-                                          {{ Form::submit('Post it!', ['class'=>'btn btn-primary btn-block','style'=>'margin-top:20px; 
-                                          height:50px;']) }}
-                                    {!! Form::close() !!}
+                                  
+                                          {{ Form::label('title', 'Tittle : ') }}
+                                          {{ Form::text('title','',['class'=>'form-control','placeholder'=>'Title']) }}
+                                          {{ Form::label('body', 'Description : ') }}
+                                          {{ Form::textarea('body', '', ['class'=>'form-control','placeholder'=>'Description'] ) }}
+                                          {{ Form::submit('Post it!', ['class'=>'btn btn-primary btn-block','style'=>'margin-top:20px; height:50px;']) }}
+                                          
                               </div>
                         </form>
+                              {{ csrf_field() }}
+                        {!! Form::close() !!}
 
                   </div>
             </div>
