@@ -1,53 +1,35 @@
 @extends('layouts.layout')
 
 @section('content')
-    
-<h1>Hello</h1>
-<div class="row">
-    <div class="col-md-11 col-sm-12 col-xs-12 gutter">
-        <div class="row">
-            <div class="col-md-6 col-xs-12">
-                <div class="card">
-                    <div class="card-header">Title Here</div>
-                    <div class="card-body">
-                        <canvas id="chartLine"></canvas>
-                    </div>
-                </div>
+
+<div class="ui grid container">
+    <div class="sixteen wide column">    
+        <h1>Statistics</h1>
+        <div id="geo-map-chart" class="ui link card">
+                <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1280_RC06/embed_loader.js"></script>
+                <script type="text/javascript">
+                  trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"laravel","geo":"","time":"today 12-m"},{"keyword":"Symfony","geo":"","time":"today 12-m"},{"keyword":"/m/02qgdkj","geo":"","time":"today 12-m"},{"keyword":"CakePHP","geo":"","time":"today 12-m"},{"keyword":"Zend","geo":"","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"q=laravel,Symfony,%2Fm%2F02qgdkj,CakePHP,Zend&date=today 12-m,today 12-m,today 12-m,today 12-m,today 12-m","guestPath":"https://trends.google.com:443/trends/embed/"});
+                </script>
+              
+        </div>
+        <div class="ui stackable two column grid">
+            <div class="column">
+            
+                <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1280_RC06/embed_loader.js"></script>
+                <script type="text/javascript">
+                    trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"laravel","geo":"","time":"today 12-m"},{"keyword":"Symfony","geo":"","time":"today 12-m"},{"keyword":"/m/02qgdkj","geo":"","time":"today 12-m"},{"keyword":"CakePHP","geo":"","time":"today 12-m"},{"keyword":"Zend","geo":"","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"q=laravel,Symfony,%2Fm%2F02qgdkj,CakePHP,Zend&date=today 12-m,today 12-m,today 12-m,today 12-m,today 12-m","guestPath":"https://trends.google.com:443/trends/embed/"});
+                </script>
+               
             </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="card">
-                    <div class="card-header">Title Here</div>
-                    <div class="card-body">
-                        <canvas id="statisticChart1"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="card">
-                    <div class="card-header">Title Here</div>
-                    <div class="card-body">
-                        <canvas id="statisticChart2"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="card">
-                    <div class="card-header">Title Here</div>
-                    <div class="card-body">
-                        <canvas id="statisticChart3"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="card">
-                    <div class="card-header">Title Here</div>
-                    <div class="card-body">
-                        <canvas id="statisticChart4"></canvas>
-                    </div>
-                </div>
+            <div class="column">
+                
+                    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1280_RC06/embed_loader.js"></script>
+                    <script type="text/javascript">
+                        trends.embed.renderExploreWidget("GEO_MAP_0", {"comparisonItem":[{"keyword":"laravel","geo":"","time":"today 12-m"},{"keyword":"Symfony","geo":"","time":"today 12-m"},{"keyword":"/m/02qgdkj","geo":"","time":"today 12-m"},{"keyword":"CakePHP","geo":"","time":"today 12-m"},{"keyword":"Zend","geo":"","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"q=laravel,Symfony,%2Fm%2F02qgdkj,CakePHP,Zend&date=today 12-m,today 12-m,today 12-m,today 12-m,today 12-m","guestPath":"https://trends.google.com:443/trends/embed/"});
+                    </script>
+           
             </div>
         </div>
     </div>
 </div>
-   
 @endsection

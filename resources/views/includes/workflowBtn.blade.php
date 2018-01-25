@@ -1,5 +1,6 @@
-<div class="myBtn">
-      <a href="/workflows" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Timelines</a>
-      <a href="/workflows/show" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">My Posts</a>
-      <a href="/workflows/create" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Create Post</a>
+
+<div class="ui buttons myBtn">
+      <a href="/workflows" class="ui red basic button"><i class="list layout icon"></i>Timelines</button>
+      <a href="/workflows/show" class="ui blue basic button"><i class="comments outline icon"></i>My Post</button>
+      <a href="/workflows/create" class="ui green basic button"><i class="write icon"></i>Create Post</a>
 </div>

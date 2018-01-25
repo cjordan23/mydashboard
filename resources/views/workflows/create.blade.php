@@ -2,30 +2,42 @@
 
 @section('title', '| Create Post')
 
+@section('stylingandreference')
+      @include('includes.tinymceditor')
+@endsection
+
 @section('content')
-      <div class="container-fluid">                             
-            <div class="row">
-                  {{--  Post Form  --}}
-                  <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 gutter">
-                        <div class="alert alert-secondary" role="alert">
-                              <h3>Create Your Post</h3>
-                        </div>
+<div class="ui grid">
+      <div class="two wide column"></div>
+      <div class="twelve wide column">
+            <div class="ui two column grid">   
+                  <div class="column">
+                        <h1 class="header">Create your posts here, {{ Auth::user()->name }}  </h1>
+                  </div>
+                  <div class="column">
+                        @include('includes.workflowBtn')
+                  </div>
+            </div>
+            <div class="ui container">                             
+                  <div class="ui form create-post-container">
+                        {{--  Post Form  --}}
                         {!! Form::open([ 'action'=>'PostsController@store', 'method'=>'POST' ]) !!}
                         <form>
-                              <div class="form-group">
-                                  
-                                          {{ Form::label('title', 'Tittle : ') }}
-                                          {{ Form::text('title','',['class'=>'form-control','placeholder'=>'Title']) }}
-                                          {{ Form::label('body', 'Description : ') }}
-                                          {{ Form::textarea('body', '', ['class'=>'form-control','placeholder'=>'Description'] ) }}
-                                          {{ Form::submit('Post it!', ['class'=>'btn btn-primary btn-block','style'=>'margin-top:20px; height:50px;']) }}
-                                          
-                              </div>
+                              <div class="ui large form">
+                              {{ Form::label('title', 'Tittle : ') }}
+                              {{ Form::text('title','',['class'=>'field','placeholder'=>'Title']) }}
+                              </div>      
+                              {{ Form::label('body', 'Description : ') }}
+                              {{ Form::textarea('body', '', ['id'=>'mytextarea','class'=>'form-control','placeholder'=>'Description', 'style'=>'height:400px'] ) }}
+                              {{ Form::submit('Post it!', ['class'=>'fluid ui blue button', 'style'=>'margin-top:20px; height:50px;']) }}
+
                         </form>
                               {{ csrf_field() }}
                         {!! Form::close() !!}
-
                   </div>
+
             </div>
       </div>
+      <div class="two wide column"></div>
+</div>
 @endsection

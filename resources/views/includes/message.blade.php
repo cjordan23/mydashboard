@@ -1,19 +1,47 @@
-@if(count($errors)>0)
-      @foreach($errors->all() as $error )
-            <div class="alert alert-danger">
-                  {{$error}}
+@if(Session::has('success'))
+<div class="ui green message">
+            <i class="close icon"></i>
+            <div class="header">
+              Your post was successfully created.
             </div>
-      @endforeach
+            <p>{{ Session::get('success') }}</p>
+</div>
 @endif
 
-@if(session('success'))
-     <div class="alert alert-success">
-           {{session('success')}}
-     </div>
+@if(Session::has('updated'))
+<div class="ui green message">
+            <i class="close icon"></i>
+            <div class="header">
+              Your post was successfully Updated.
+            </div>
+            <p>{{ Session::get('updated') }}</p>
+</div>
 @endif
 
-@if(session('error'))
-     <div class="alert alert-danger">
-           {{session('error')}}
-     </div>
+
+@if(Session::has('deleted'))
+<div class="ui green message">
+            <i class="close icon"></i>
+            <div class="header">
+              Your post was successfully Deleted.
+            </div>
+            <p>{{ Session::get('deleted') }}</p>
+</div>
+@endif
+
+
+@if( count($errors) > 0 )
+      <div class="ui red message">
+            <i class="close icon"></i>
+            <div class="header">
+                  You have an error that occur
+            </div>
+            <ul class="list">
+            
+                  @foreach( $errors as $error)
+                        <li>{{ $error }}</li>
+                  @endforeach
+            </ul>
+
+      </div>
 @endif

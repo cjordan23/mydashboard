@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('WorkflowCss')
+    @yield('stylingandreference')
 
     <!-- ChartJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
@@ -31,6 +32,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>    
     <!--=== Axios ===-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
    
 </head>
 <body id="app" class="home">    
@@ -48,8 +50,9 @@
                 <div class="sixteen wide column">
                         <div id="main-content">
 
-                                @include('includes.message')
-                                @yield('content')
+                            @include('includes.message')
+                            @yield('content')
+                            
                         </div>
                 </div>
             </div>
@@ -123,5 +126,7 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlMIVnxAhJgv8bi-lT5FjGpX6VTonZsAs&callback=initMap">
     </script>
+
+
 </body>
 </html>

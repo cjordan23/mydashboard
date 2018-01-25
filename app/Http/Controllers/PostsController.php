@@ -4,10 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
+use Session;
 use DB;
 
 class PostsController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=>['index'] ]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +28,8 @@ class PostsController extends Controller
     public function index()
     {
         //
-        $posts = Post::orderBy('created_at','desc');
+
+        $posts = Post::orderBy('created_at','desc')->paginate(5);
         return view('workflows.index')->with('posts',$posts);
 
     }
@@ -48,9 +61,11 @@ class PostsController extends Controller
         $posts = new Post;
         $posts->title = $request->input('title');
         $posts->body = $request->input('body');
+        $posts->user_id = auth()->user()->id;
         $posts->save();
-
-        return redirect('/workflows', ['posts'=>$posts] );   
+        
+        Session::flash('success','Post Saved !');
+        return redirect()->route('workflows.index', $posts->id );   
     }
 
     /**
@@ -62,8 +77,23 @@ class PostsController extends Controller
     public function show($id)
     {
         //
-        $posts = Post::all();
-        return view('workflows.show')->with('posts',$posts);
+
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        $posts = Post::orderBy('created_at','desc');
+
+        // $posts = DB::table('posts')->orderBy('created_at', 'desc');
+      
+        // return view('workflows.show');
+        // return view('workflows.show', ['user_id'=>$user_id, 'user'=>$user, 'posts'=>$posts]);
+        return view('workflows.show')->with('posts', $user->posts);
+
+    }
+       
+    public function showpost($id)
+    {
+        $posts = Post::find($id);
+        return view('workflows.posts')->with('posts',$posts);
     }
 
     /**
@@ -75,6 +105,13 @@ class PostsController extends Controller
     public function edit($id)
     {
         //
+        $posts = Post::find($id);
+
+        //Check for correct user
+        if(auth()->user()->id !== $posts->user_id){
+            return redirect('workflows.index')->with('error', 'Unauthorized page');
+        }
+        return view('workflows.edit')->with('posts',$posts);
     }
 
     /**
@@ -86,7 +123,18 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //Update the Post
+        $this->validate($request, [
+            'title'=>'required',
+            'body'=>'required'
+        ]);
+        $posts = Post::find($id);
+        $posts->title = $request->input('title');
+        $posts->body = $request->input('body');
+        $posts->save();
+        
+        Session::flash('updated','Post Updated !');
+        return redirect()->route('workflows.show', $posts->id );   
     }
 
     /**
@@ -98,5 +146,10 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
+        $posts = Post::find($id);
+        $posts->delete();
+          
+        Session::flash('deleted','Post Deleted !');
+        return redirect()->route('workflows.show', $posts->id);
     }
 }
