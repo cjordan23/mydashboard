@@ -77,17 +77,15 @@ class PostsController extends Controller
     public function show($id)
     {
         //
-
+        // $posts = DB::table('posts')->orderBy('created_at', 'desc');
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
         $posts = Post::orderBy('created_at','desc');
+        return view('workflows.show')->with('posts',$posts)->with('posts', $user->posts);
 
-        // $posts = DB::table('posts')->orderBy('created_at', 'desc');
-      
         // return view('workflows.show');
         // return view('workflows.show', ['user_id'=>$user_id, 'user'=>$user, 'posts'=>$posts]);
-        return view('workflows.show')->with('posts', $user->posts);
-
+        //return view('workflows.show', compact('user','posts'));
     }
        
     public function showpost($id)

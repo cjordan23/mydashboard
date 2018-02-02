@@ -1,6 +1,12 @@
-
-<div class="ui buttons myBtn">
-      <a href="/workflows" class="ui red basic button"><i class="list layout icon"></i>Timelines</button>
-      <a href="/workflows/show" class="ui blue basic button"><i class="comments outline icon"></i>My Post</button>
-      <a href="/workflows/create" class="ui green basic button"><i class="write icon"></i>Create Post</a>
+      
+<div class="d-flex flex-row-reverse">
+      <div class="p-2">
+            <button id="timeline-btn" href="/workflows" type="button" class="btn btn-outline-primary">Timelines</button>
+      </div>
+      <div class="p-2">
+            <button id="mypost-btn" href="/workflows/show" type="button" class="btn btn-outline-success">My Post</button>
+      </div>
+      <div class="p-2">
+            <button id="createpost-btn" href="/workflows/create" type="button" class="btn btn-outline-danger">Create Post</button>
+      </div>
 </div>
