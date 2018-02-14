@@ -8513,6 +8513,12 @@ p.workflow-page-header {
   border-bottom-width: 5px;
 }
 
+/**
+*
+* MAP and Chart
+*
+*/
+
 #myChart,
 #chartLine,
 #pieChart,
@@ -8526,7 +8532,7 @@ p.workflow-page-header {
 
 #map-container-card {
   width: 100%;
-  height: 500px;
+  height: 600px;
   margin-bottom: 2rem;
   padding: 20px;
   border-radius: 5px;
@@ -8555,6 +8561,12 @@ p.workflow-page-header {
   padding: 1%;
   margin-bottom: 1%;
 }
+
+/**
+*
+* Post
+*
+*/
 
 .create-post-card {
   -webkit-box-shadow: 3px 3px 7px -1px rgba(0, 0, 0, 0.4);
@@ -8617,26 +8629,50 @@ div#main-header > a:hover {
   text-align: justify;
 }
 
+p {
+  font-size: 16px;
+}
+
 .post-time {
   font-size: 14px;
+}
+
+.card-footer > .text-left {
+  float: left;
+}
+
+.card-footer > .text-right {
+  float: right;
 }
 
 .inner > p {
   font-size: 16px;
 }
 
+/**
+*
+* Card
+*
+*/
+
+.card {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .container-card {
-  margin: 2rem;
-  padding: 20px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 10px;
   border-radius: 10px;
   border-top-color: black;
   width: 30%;
   height: 260px;
   background-color: white;
-  z-index: 1030;
+  z-index: 1000;
   float: left;
-  -webkit-box-shadow: 0px 0px 26px -10px black;
-  box-shadow: 0px 0px 26px -10px black;
+  -webkit-box-shadow: 3px 3px 7px -1px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 7px -1px rgba(0, 0, 0, 0.4);
 }
 
 .workflows-card-column {
@@ -8663,12 +8699,19 @@ canvas {
 
 #geo-map-chart {
   width: 100%;
-  height: 400px;
+  height: auto;
 }
 
 /*
   Media Quesris
   */
+
+@media all and (min-device-width: 1000px) {
+  .container-card {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
 
 @media only screen and (min-device-width: 500px) and (max-device-width: 720px) {
   .wrapper,

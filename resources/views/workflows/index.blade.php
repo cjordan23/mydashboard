@@ -12,6 +12,7 @@
   <div class="col-lg-1 col-md-1"></div>
   <div class="col-lg-10 col-md-10">
     <div class="row">
+      <hr></hr>
       <div class="col-lg-6 col-md-6 col-sm-12">
     
           <p class="workflow-page-header">

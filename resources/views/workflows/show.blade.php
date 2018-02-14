@@ -32,9 +32,20 @@
         @foreach($posts as $post)
         <div class="card w-100 post-card">
           <div class="card-body">
-            <h2 class="card-title post-title"><strong>{{$post->title}}</strong></h2>
+            <h2 class="card-title post-title">
+              <strong>{{$post->title}}</strong>
+            </h2>
             <p class="card-text post-body">{!! $post->body !!}</p>
-            <p class="card-text post-time"><small class="text-muted">{{$post->created_at}}</small></p>
+          </div>
+          <div class="card-footer">
+            <div class="text-left">
+                
+                  <small class="text-muted post-time">{{$post->created_at}}</small>
+                
+            </div>
+            <div class="text-right">
+              <a class="btn btn-info" href="/workflows/{{$post->id}}/edit">Edit</a>
+            </div>
           </div>
         </div>
         @endforeach
