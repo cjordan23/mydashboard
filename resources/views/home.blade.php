@@ -15,6 +15,8 @@
                     @endif
 
                     You are logged in!
+                    <a href="/dashboard" type="button" class="btn btn-success btn-lg btn-block">Go to dashbaord</a>
+                    
                 </div>
             </div>
         </div>

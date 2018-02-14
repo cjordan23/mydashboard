@@ -1,10 +1,10 @@
 @extends('layouts.layout')
 @section('content')
-<h2>Admin</h2>
+
+@include('includes.adminMenu')
+
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 gutter">
-
-        @include('includes.adminMenu')
 
         <div class="row">
             <div class="panel panel-default col-lg-12 col-md-12 col-sm-12 col-xs-12">

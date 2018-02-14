@@ -1,148 +1,53 @@
 @extends('layouts.layout')
 
-@section('title', '| Workflow')
+@section('title', '| Workflow Timelines')
 
 @section('WorkflowCss')
   <link href="{{ asset('/css/timeline.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
-<div class="container-fluid">
-  <div class="row no-gutters">
-    {{--  Workflow timeline view  --}}
-    <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-      @include('includes.workflowBtn')
-      <div class="page-header">
-        <h1 id="timeline"> {{ Auth::user()->name }} ! This is your timeline </h1>
-      </div>
-      @if( count($posts) > 0 )
-        @foreach($posts as $post)
-          <ul class="timeline">
-              <li>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4 class="timeline-title"><a href="/workflows/{{$post->id}}">{{$post->title}}</a></h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p>{{$post->body}}</p>
-                    <p>
-                        <small class="text-muted">
-                          <i class="glyphicon glyphicon-time"></i>
-                          Posted on {{$post->created_at}}
-                        </small>
-                    </p>
-                  </div>
-                </div>
-              </li>
-          </ul>
-        @endforeach
-      @else 
-          <h3>No Post Found! </h3>
-      @endif
 
+<div class="row">
+  <div class="col-lg-1 col-md-1"></div>
+  <div class="col-lg-10 col-md-10">
+    <div class="row">
+      <hr></hr>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+    
+          <p class="workflow-page-header">
+            @guest
+            Hello !
+            @endguest
+            @auth
+            Welcome , {{ Auth::user()->name }}
+            @endauth
+          </p>
+        
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        @include('includes.workflowBtn')
+      </div>
     </div>
-  </div>
+    @if( count($posts) > 0 )
+      @foreach($posts as $post)
+      <div class="card w-100 post-card">
+        <div class="card-body">
+          <h2 class="card-title post-title"><strong>{{$post->title}}</strong></h2>
+          <p class="card-text post-body">{!! $post->body !!}</p>
+          <p class="card-text post-time"><small class="text-muted">{{$post->created_at}}</small></p>
+        </div>
+      </div>
+      @endforeach
+    @else
+      <h3>No Post Found! </h3>
+    @endif
+
+
+    {{ $posts->links() }}
+    </div>
+    <div class="col-lg-1 col-md-1"></div>
 </div>
 
-<div class="container-fluid">
-  <div class="row no-gutters">
-    <!--  Workflow timeline view  -->
-    <div class="col-md-10 col-md-offset-2 col-sm-12 col-xs-12">
-      @include('includes.workflowBtn')
-      <div class="page-header">
-        <h1 id="timeline">Timeline</h1>
-      </div>
-      <ul class="timeline">
-        <li>
-            <div class="timeline-badge">
-              <i class="glyphicon glyphicon-check"></i>
-            </div>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                  <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
-                </div>
-                <div class="timeline-body">
-                  <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-                </div>
-            </div>
-        </li>
 
-        <li class="timeline-inverted">
-            <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-              </div>
-              <div class="timeline-body">
-                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-                <p>Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no mé, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet mé vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.</p>
-              </div>
-            </div>
-        </li>
-
-        <li>
-            <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-              </div>
-              <div class="timeline-body">
-                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              </div>
-            </div>
-        </li>
-
-        <li class="timeline-inverted">
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-              </div>
-              <div class="timeline-body">
-                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              </div>
-            </div>
-        </li>
-
-        <li>
-            <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-              </div>
-              <div class="timeline-body">
-                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-                <hr>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-        </li>
-
-        <li>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-            </div>
-            <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-            </div>
-          </div>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
-</div> 
--->
 @endsection

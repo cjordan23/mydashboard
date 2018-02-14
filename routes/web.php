@@ -24,6 +24,9 @@ Route::get('/dashboard', 'PagesController@dashboardPage');
 Route::get('/admin', 'PagesController@adminPage');
 
 Route::resource('workflows','PostsController');
+
+Route::get('workflows/showpost/{$id}','PostsController@showpost');
+
 // Route::get('/workflows/show','PostsController@show');
 // Route::post('/workflows/create', 'PostsController@store');  
 

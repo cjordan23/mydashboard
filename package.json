@@ -13,14 +13,32 @@
         "axios": "^0.17",
         "bootstrap-sass": "^3.3.7",
         "cross-env": "^5.1",
-        "jquery": "^3.2",
+        "jquery": "^3.1.1",
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
-        "vue": "^2.5.13"
+        "semantic-ui-css": "^2.2.12"
     },
     "dependencies": {
+        "bootstrap": "^4.0.0",
         "chart.js": "^2.7.1",
         "highcharts": "^6.0.4",
-        "semantic-ui": "^2.2.13"
-    }
+        "semantic-ui": "^2.2.14"
+    },
+    "name": "mydashboard",
+    "description": "<p align=\"center\"><img src=\"https://laravel.com/assets/img/components/logo-laravel.svg\"></p>",
+    "version": "1.0.0",
+    "main": "main.js",
+    "directories": {
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cjordan23/mydashboard.git"
+    },
+    "author": "Christopher Jordan",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/cjordan23/mydashboard/issues"
+    },
+    "homepage": "https://github.com/cjordan23/mydashboard#readme"
 }

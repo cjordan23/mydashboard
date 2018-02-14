@@ -13,5 +13,11 @@ class Post extends Model
     * @var array
     */
     protected $table = 'posts';
+    public $primaryKey = 'id';
+    public $timestamps = true;
     protected $guarded = [];
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }
