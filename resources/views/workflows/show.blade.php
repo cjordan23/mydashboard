@@ -12,19 +12,19 @@
   <div class="col-lg-1 col-md-1"></div>
   <div class="col-lg-10 col-md-10">
       <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-12 col-sm-12">
       
             <p class="workflow-page-header">
               @guest
               Hello !
               @endguest
               @auth
-              Welcome , {{ Auth::user()->name }}
+              Welcome , {{ Auth::user()->name }}. All your posts is here 
               @endauth
             </p>
           
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-12 col-sm-12">
           @include('includes.workflowBtn')
         </div>
       </div>

@@ -8368,6 +8368,13 @@ span {
   height: 100%;
 }
 
+.navbar {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
 .nav-header {
   z-index: 1030;
   top: 0;
@@ -8396,54 +8403,70 @@ span {
   color: aliceblue;
 }
 
+.brand {
+  padding: 0;
+  font-size: 1rem;
+}
+
 .nav-menu-left {
   color: white;
   font-size: 16px;
-  padding: 2rem;
-  float: left;
 }
 
-.nav-menu-left:hover {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.nav-menu-right {
-  color: white;
-  font-size: 16px;
-  height: 100%;
-  width: 120px;
-  float: right;
-  padding: 0.5rem;
-  margin-right: 10px;
-}
-
-.nav-menu-right > .btn-group {
-  color: white;
-  font-size: 16px;
-  height: 100%;
-  width: 100%;
-  float: right;
-  padding: 0.5rem;
+.dropdown-menu > .dropdown-item > a {
+  color: black;
 }
 
 .username {
   font-size: 16px;
   padding: 0.2rem;
+  color: white;
+}
+
+.navbar-dark .navbar-text a {
+  color: black !important;
+}
+
+/**
+.nav-menu-left:hover{
+    color:white;
+    text-decoration: none;
+    font-size:18px;
+
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    
+}
+
+.nav-menu-right{
+    color: black;
+    font-size: 16px;
+    height: 100%;
+    width: 120px;
+    float:right;
+    padding: 0.5rem;
+    margin-right: 10px;
+}
+.nav-menu-right > .btn-group {
+    color: black;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    float:right;
+    padding: 0.5rem;
+    
 }
 
 .dropdown-item {
-  font-size: 14px;
+    font-size: 14px;
 }
-
-a.nav-menu-right {
-  color: white;
+a.nav-menu-right{
+    color: white;
 }
+*/
 
 .footer {
   bottom: 0;
@@ -8463,7 +8486,6 @@ a.nav-menu-right {
 #main-container {
   padding: 2rem;
   position: relative;
-  top: 60px !important;
   left: 0;
   width: 100%;
   height: 100%;
@@ -8534,7 +8556,7 @@ p.workflow-page-header {
   width: 100%;
   height: 600px;
   margin-bottom: 2rem;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
   border-top-color: black;
   -webkit-box-shadow: 3px 3px 7px -1px rgba(0, 0, 0, 0.4);
@@ -8568,6 +8590,10 @@ p.workflow-page-header {
 *
 */
 
+.post-edit-card {
+  padding: 10px;
+}
+
 .create-post-card {
   -webkit-box-shadow: 3px 3px 7px -1px rgba(0, 0, 0, 0.4);
   box-shadow: 3px 3px 7px -1px rgba(0, 0, 0, 0.4);
@@ -8589,10 +8615,6 @@ label.col-form-label {
 input.form-control-plaintext {
   height: 100%;
   font-size: 14px;
-}
-
-.create-post-container {
-  margin-top: 2rem;
 }
 
 div#main-header > a:hover {
@@ -8620,8 +8642,6 @@ div#main-header > a:hover {
 }
 
 .post-body {
-  padding-top: 2rem;
-  padding-bottom: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   font-size: 16px;
@@ -8658,6 +8678,10 @@ p {
 .card {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.table-card {
+  width: 100%;
 }
 
 .container-card {

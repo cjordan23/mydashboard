@@ -21,7 +21,17 @@ function initMap() {
       return {
         icon: getCircle(magnitude)
       };
+
+      var infoWindow = new google.maps.InfoWindow({
+        
+      });
+
+      map.data.addListener('click',function(event){
+       
+      });
     });
+
+    
 }
 
 function getCircle(magnitude) {
