@@ -22,14 +22,20 @@ class PagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function dashboardPage(){
+        return view('dashboard');
+    } 
      public function adminPage(){
         return view('pages.admin');
     }
-    public function dashboardPage(){
-        return view('dashboard');
-    }
     public function statisticPage(){
         return view('pages.statistic');
+    }
+    public function hourMapPage(){
+        return view('pages.hourmap');
+    }
+    public function weekMapPage(){
+        return view('pages.weekmap');
     }
  
 }

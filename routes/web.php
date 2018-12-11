@@ -22,6 +22,8 @@ Route::get('/statistic', 'PagesController@statisticPage');
 
 Route::get('/dashboard', 'PagesController@dashboardPage');
 Route::get('/admin', 'PagesController@adminPage');
+Route::get('/hourmap','PagesController@hourMapPage');
+Route::get('/weekmap','PagesController@weekMapPage');
 
 Route::resource('workflows','PostsController');
 

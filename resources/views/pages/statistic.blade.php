@@ -56,5 +56,65 @@
     </div>
 </div>
 
+<!-- This code below for the table -->
+<div class="row">
+        <div class="card table-card">
+            <table id="tableEq"class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Long</th>
+                    <th scope="col">Lat</th>
+                    <th scope="col">Mag</th>
+                    <th scope="col">Location Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>1</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>2</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>3</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                    <canvas id="myChart"></canvas>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                    <canvas id="chartLine"></canvas>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                    <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+               
+    </div>
+</div>
+  
 @endsection
 

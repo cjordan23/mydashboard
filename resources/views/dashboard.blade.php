@@ -1,73 +1,64 @@
 @extends('layouts.layout')
 
 @section('content')
-<script>
-    var  src='https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson';
-    console.log(src);
-</script>
+
 
 <div class="container-fluid">
     <div class="row">
+        <div class="col-sm-3">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Earthquake Past Hour</h5>
+                <p class="card-text">Map showing Earthquake happening during past few hour. Data update every 5 minutes. </p>
+                <a href="/hourmap" class="btn btn-primary">Go to Map</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Earthquake Past Today</h5>
+                <p class="card-text">Map showing Earthquake happening during past today. Data update every 5 minutes. </p>
+                <a href="/dashboard" class="btn btn-primary">Go to Map</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Earthquake Past Week</h5>
+                <p class="card-text">Map showing Earthquake happening during past seven days or week. Data update every 5 minutes. </p>
+                <a href="/weekmap" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
             <div id="map-container-card" class="card">
-                  
                 <div class="card-body">
+                    <div class="text-center">
+                        <h2 class="card-title">Earthquake Past Today</h2>
+                        <hr></hr>
+                    </div>
                     <div id="map-container"></div>
                 </div>
             </div>
     </div>
-    <div class="row">
-        <div class="card table-card">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Long</th>
-                    <th scope="col">Lat</th>
-                    <th scope="col">Location Name</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="row">
-
-        <div class="col-lg-4 col-md-12 col-sm-12 col-12">
-            <div class="card">
-                    <canvas id="myChart"></canvas>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 col-12">
-            <div class="card">
-                    <canvas id="chartLine"></canvas>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 col-12">
-            <div class="card">
-                    <canvas id="pieChart"></canvas>
-            </div>
-        </div>
-               
-    </div>
 </div>
-  
+
 @endsection
+
+@push('googleMapScripts')
+   <script src="{{ asset('/js/maps/googlemap.js') }}"></script>
+@endpush

@@ -78,6 +78,12 @@
             @endif
 
             <div class="content">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Welcome</h1>
+                        <p class="lead">This website is created using Laravel Framework :D </p>
+                    </div>
+                </div>
                 <div class="title m-b-md">
                     Laravel
                 </div>

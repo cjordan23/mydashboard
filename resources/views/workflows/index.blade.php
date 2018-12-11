@@ -8,25 +8,28 @@
 
 @section('content')
 
+<div class="row border-info">
+  <div class="col-lg-6 col-md-12 col-sm-12">
+    <p class="workflow-page-header">
+      @guest
+      Hello Guest!
+      @endguest
+      @auth
+      Recently Timelines , {{ Auth::user()->name }}
+      @endauth
+    </p>
+  </div>
+  <div class="col-lg-6 col-md-12 col-sm-12">
+    @include('includes.workflowBtn')
+  </div>
+</div>
+
+<hr></hr>
+
 <div class="row">
   <div class="col-lg-1 col-md-1"></div>
   <div class="col-lg-10 col-md-10 col-sm-12">
-    <div class="row">
-      <hr></hr>
-      <div class="col-lg-6 col-md-12 col-sm-12">
-        <p class="workflow-page-header">
-          @guest
-          Hello Guest!
-          @endguest
-          @auth
-          Recently Timelines , {{ Auth::user()->name }}
-          @endauth
-        </p>
-      </div>
-      <div class="col-lg-6 col-md-12 col-sm-12">
-        @include('includes.workflowBtn')
-      </div>
-    </div>
+    
     <div class="row">
         @if( count($posts) > 0 )
         @foreach($posts as $post)
