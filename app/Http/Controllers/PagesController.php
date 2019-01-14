@@ -31,11 +31,22 @@ class PagesController extends Controller
     public function statisticPage(){
         return view('pages.statistic');
     }
+    public function aboutPage(){
+        return view('pages.about');
+    }
     public function hourMapPage(){
         return view('pages.hourmap');
+    }
+    public function dayMapPage(){
+        return view('pages.daymap');
     }
     public function weekMapPage(){
         return view('pages.weekmap');
     }
- 
+    public function monthMapPage(){
+        return view('pages.monthmap');
+    }
+    public function kmlPage(){
+        return view('pages.kmldepth');
+    }
 }

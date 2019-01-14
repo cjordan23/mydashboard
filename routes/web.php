@@ -19,11 +19,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/statistic', 'PagesController@statisticPage');
+Route::get('/about', 'PagesController@aboutPage');
 
 Route::get('/dashboard', 'PagesController@dashboardPage');
 Route::get('/admin', 'PagesController@adminPage');
 Route::get('/hourmap','PagesController@hourMapPage');
+Route::get('/daymap', 'PagesController@dayMapPage');
 Route::get('/weekmap','PagesController@weekMapPage');
+Route::get('/monthmap', 'PagesController@monthMapPage');
+route::get('/kml7days', 'PagesController@kmlPage');
 
 Route::resource('workflows','PostsController');
 

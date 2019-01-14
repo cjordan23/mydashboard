@@ -16,8 +16,4 @@ $(document).ready(function(){
             window.location = '/workflows/create';
       });
 
-      $('.nav-item').on('click',function(){
-            ('.nav-item').addClass('.active');
-      });
-      
 });

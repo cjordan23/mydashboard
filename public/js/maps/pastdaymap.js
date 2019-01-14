@@ -1,10 +1,8 @@
-//https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson
-
 var map;
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map-week-container'), {
-    zoom: 2.2,
-    center: {lat: -15.865427, lng: 151.196123},
+  map = new google.maps.Map(document.getElementById('map-day-container'), {
+    zoom: 2,
+    center: {lat: -33.865427, lng: 151.196123},
     mapTypeId: 'terrain'
   });
 
@@ -15,7 +13,7 @@ function initMap() {
   // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
   // https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js
   //https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
-  script.src = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojsonp';
+  script.src = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojsonp';
   document.getElementsByTagName('head')[0].appendChild(script);
 
   map.data.setStyle(function(feature) {

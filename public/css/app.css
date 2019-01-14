@@ -8358,14 +8358,23 @@ body {
 header,
 nav,
 section,
-aside,
-span {
+aside {
   display: block !important;
 }
 
 .wrapper {
   grid-template-rows: 60px 1fr 100px;
   height: 100%;
+}
+
+#web-title {
+  font-size: 20px;
+  color: whitesmoke;
+}
+
+.username {
+  font-size: 12px;
+  padding: 0.2rem;
 }
 
 .navbar {
@@ -8376,59 +8385,12 @@ span {
   margin-bottom: 0;
 }
 
-.nav-header {
-  z-index: 1030;
-  top: 0;
-  padding: 0;
-  margin: 0;
-  position: fixed !important;
-  height: 60px;
-  width: 100% !important;
-  background-color: black;
-  -webkit-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
-  line-height: 23px;
-  -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+.navbar-brand {
+  padding-top: 0 !important;
 }
 
-#navTitle {
-  width: 200px;
-  -webkit-transition: width .3s ease-in-out;
-  transition: width .3s ease-in-out;
-  padding: 2rem;
-  font-size: 24px;
-  float: left;
-  color: aliceblue;
-}
-
-.brand {
-  padding: 0;
-  font-size: 1rem;
-}
-
-.nav-menu-left {
-  color: white;
-  font-size: 16px;
-}
-
-.nav-menu-right {
-  color: red;
-}
-
-.dropdown-menu > .dropdown-item > a {
-  color: black;
-}
-
-.username {
-  font-size: 16px;
-  padding: 0.2rem;
-}
-
-.navbar-dark .navbar-text a {
-  color: black !important;
+.dropdown-link {
+  color: #000000 !important;
 }
 
 /**
@@ -8487,12 +8449,25 @@ a.nav-menu-right{
   padding: 2rem;
 }
 
+#about-jumbotron {
+  border-radius: 4px;
+  margin-top: 4rem;
+}
+
+.text-center {
+  padding-top: 1rem;
+}
+
 .login-container {
   padding-top: 10px;
 }
 
 .home-container {
   padding-top: 20px;
+}
+
+.border-info {
+  margin-top: 1rem;
 }
 
 #main-container {
@@ -8503,7 +8478,7 @@ a.nav-menu-right{
   width: 100%;
   height: 100%;
   float: left;
-  background: -ms-radial-gradient(center, ellipse cover, white 0%, #ededed 100%);
+  background: -ms-radial-gradient(center, ellipse farthest-corner, white 0%, #ededed 100%);
 }
 
 p.workflow-page-header {
@@ -8572,26 +8547,23 @@ p.workflow-page-header {
 
 #map-container-card {
   width: 100%;
-  height: 86vh;
+  height: 60vh;
   margin-bottom: 2rem;
-  padding: 10px;
+  padding: 4px;
   border-radius: 5px;
-  border-top-color: black;
   -webkit-box-shadow: 3px 3px 7px -1px rgba(0, 0, 0, 0.4);
   box-shadow: 3px 3px 7px -1px rgba(0, 0, 0, 0.4);
 }
 
-#map-container {
+#map-hour-container,
+#map-day-container,
+#map-week-container,
+#map-month-container {
   height: 100%;
   width: auto;
 }
 
-#map-hour-container {
-  height: 100%;
-  width: auto;
-}
-
-#map-week-container {
+#significant-hour-container {
   height: 100%;
   width: auto;
 }
@@ -8698,9 +8670,27 @@ p {
 *
 */
 
-.card {
+#card-dashboard {
   margin-top: 2rem;
+}
+
+.home-card:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.card {
   margin-bottom: 2rem;
+}
+
+.card-title {
+  font-size: 16px;
+}
+
+.card-text {
+  font-size: 12px;
 }
 
 .table-card {
@@ -8752,60 +8742,6 @@ canvas {
 /*
   Media Quesris
   */
-
-@media all and (min-device-width: 1000px) {
-  .container-card {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-}
-
-@media only screen and (min-device-width: 500px) and (max-device-width: 720px) {
-  .wrapper,
-  #content-container {
-    margin-top: 320px;
-  }
-}
-
-@media only screen and (min-device-width: 998px) and (max-device-width: 1350px) {
-  #navigation .logo img {
-    max-width: 130px;
-    padding: 16px 0 17px;
-    width: 100%;
-  }
-}
-
-@media only screen and (max-device-width: 992px) {
-  header .header-top li {
-    padding-left: 20px !important;
-    padding-right: 0;
-  }
-
-  header .logo img {
-    max-width: 125px !important;
-  }
-}
-
-@media only screen and (min-device-width: 767px) and (max-device-width: 998px) {
-  .user-dashboard .header-top {
-    padding-top: 5px;
-  }
-
-  .user-dashboard .header-rightside {
-    display: inline-block;
-    float: left;
-    width: 100%;
-  }
-
-  .user-dashboard .header-rightside .header-top img {
-    max-width: 41px !important;
-  }
-
-  .user-dashboard .btn.btn-secondary.btn-lg.dropdown-toggle > span,
-  .user-dashboard .btn-group-lg > .btn.btn-secondary.dropdown-toggle > span {
-    font-size: 12px;
-  }
-}
 
 /*
   *   Media Queries for LeftSideMenu
